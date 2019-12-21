@@ -62,11 +62,12 @@
             this.InstituciónColumn,
             this.MonedaColumn,
             this.FechaColumn});
-            this.ChequesDataGridView.Location = new System.Drawing.Point(75, 99);
+            this.ChequesDataGridView.Location = new System.Drawing.Point(75, 138);
             this.ChequesDataGridView.Name = "ChequesDataGridView";
             this.ChequesDataGridView.ReadOnly = true;
-            this.ChequesDataGridView.Size = new System.Drawing.Size(955, 302);
+            this.ChequesDataGridView.Size = new System.Drawing.Size(955, 261);
             this.ChequesDataGridView.TabIndex = 3;
+            this.ChequesDataGridView.DoubleClick += new System.EventHandler(this.ChequesDataGridView_DoubleClick);
             // 
             // NombreColumn
             // 
@@ -145,7 +146,13 @@
             this.RefrescarButton.TabIndex = 23;
             this.RefrescarButton.Text = "Refrescar";
             this.RefrescarButton.UseVisualStyleBackColor = false;
-            this.RefrescarButton.Click += new System.EventHandler(this.CerrarButton_Click);
+            this.RefrescarButton.Click += new System.EventHandler(this.RefrescarButton_Click);
+            // 
+            // Refreshtimer
+            // 
+            this.Refreshtimer.Enabled = true;
+            this.Refreshtimer.Interval = 5000;
+            this.Refreshtimer.Tick += new System.EventHandler(this.Refreshtimer_Tick);
             // 
             // ChequesForm
             // 

@@ -35,10 +35,22 @@
             this.NumeroChequeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MontoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmisorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReceptorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InstituciónColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MonedaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CerrarButton = new System.Windows.Forms.Button();
             this.CrearArchivoButton = new System.Windows.Forms.Button();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.UpsertPanel = new System.Windows.Forms.Panel();
+            this.MontoNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.MonedaComboBox = new System.Windows.Forms.ComboBox();
+            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.FechaLabel = new System.Windows.Forms.Label();
+            this.MonedaLabel = new System.Windows.Forms.Label();
+            this.InstitucionLabel = new System.Windows.Forms.Label();
+            this.ReceptorLabel = new System.Windows.Forms.Label();
             this.EmisorLabel = new System.Windows.Forms.Label();
             this.InstitucionTextBox = new System.Windows.Forms.TextBox();
             this.ReceptorTextBox = new System.Windows.Forms.TextBox();
@@ -56,23 +68,12 @@
             this.InformacionRutaLabel = new System.Windows.Forms.Label();
             this.BorrarRenglonButton = new System.Windows.Forms.Button();
             this.InformationProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ReceptorLabel = new System.Windows.Forms.Label();
-            this.InstitucionLabel = new System.Windows.Forms.Label();
-            this.MonedaLabel = new System.Windows.Forms.Label();
-            this.FechaLabel = new System.Windows.Forms.Label();
-            this.EmisorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReceptorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InstituciónColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MonedaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.MonedaComboBox = new System.Windows.Forms.ComboBox();
-            this.MontoNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.MostrarChequesButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ChequesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.UpsertPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InformationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MontoNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InformationProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // ChequesDataGridView
@@ -119,6 +120,36 @@
             this.DescripcionColumn.HeaderText = "Descripción";
             this.DescripcionColumn.Name = "DescripcionColumn";
             this.DescripcionColumn.ReadOnly = true;
+            // 
+            // EmisorColumn
+            // 
+            this.EmisorColumn.HeaderText = "Emisor";
+            this.EmisorColumn.Name = "EmisorColumn";
+            this.EmisorColumn.ReadOnly = true;
+            // 
+            // ReceptorColumn
+            // 
+            this.ReceptorColumn.HeaderText = "Receptor";
+            this.ReceptorColumn.Name = "ReceptorColumn";
+            this.ReceptorColumn.ReadOnly = true;
+            // 
+            // InstituciónColumn
+            // 
+            this.InstituciónColumn.HeaderText = "Institución Financiera";
+            this.InstituciónColumn.Name = "InstituciónColumn";
+            this.InstituciónColumn.ReadOnly = true;
+            // 
+            // MonedaColumn
+            // 
+            this.MonedaColumn.HeaderText = "Moneda";
+            this.MonedaColumn.Name = "MonedaColumn";
+            this.MonedaColumn.ReadOnly = true;
+            // 
+            // FechaColumn
+            // 
+            this.FechaColumn.HeaderText = "Fecha";
+            this.FechaColumn.Name = "FechaColumn";
+            this.FechaColumn.ReadOnly = true;
             // 
             // CerrarButton
             // 
@@ -176,6 +207,73 @@
             this.UpsertPanel.Name = "UpsertPanel";
             this.UpsertPanel.Size = new System.Drawing.Size(251, 535);
             this.UpsertPanel.TabIndex = 12;
+            // 
+            // MontoNumericUpDown
+            // 
+            this.MontoNumericUpDown.Location = new System.Drawing.Point(21, 106);
+            this.MontoNumericUpDown.Name = "MontoNumericUpDown";
+            this.MontoNumericUpDown.Size = new System.Drawing.Size(205, 20);
+            this.MontoNumericUpDown.TabIndex = 2;
+            // 
+            // MonedaComboBox
+            // 
+            this.MonedaComboBox.FormattingEnabled = true;
+            this.MonedaComboBox.Items.AddRange(new object[] {
+            "Dolar",
+            "Euro",
+            "Colon",
+            "Peso"});
+            this.MonedaComboBox.Location = new System.Drawing.Point(21, 278);
+            this.MonedaComboBox.Name = "MonedaComboBox";
+            this.MonedaComboBox.Size = new System.Drawing.Size(200, 21);
+            this.MonedaComboBox.TabIndex = 6;
+            // 
+            // FechaDateTimePicker
+            // 
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(21, 318);
+            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.FechaDateTimePicker.TabIndex = 7;
+            // 
+            // FechaLabel
+            // 
+            this.FechaLabel.AutoSize = true;
+            this.FechaLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FechaLabel.Location = new System.Drawing.Point(18, 302);
+            this.FechaLabel.Name = "FechaLabel";
+            this.FechaLabel.Size = new System.Drawing.Size(37, 13);
+            this.FechaLabel.TabIndex = 29;
+            this.FechaLabel.Text = "Fecha";
+            // 
+            // MonedaLabel
+            // 
+            this.MonedaLabel.AutoSize = true;
+            this.MonedaLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.MonedaLabel.Location = new System.Drawing.Point(18, 263);
+            this.MonedaLabel.Name = "MonedaLabel";
+            this.MonedaLabel.Size = new System.Drawing.Size(46, 13);
+            this.MonedaLabel.TabIndex = 27;
+            this.MonedaLabel.Text = "Moneda";
+            // 
+            // InstitucionLabel
+            // 
+            this.InstitucionLabel.AutoSize = true;
+            this.InstitucionLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.InstitucionLabel.Location = new System.Drawing.Point(18, 207);
+            this.InstitucionLabel.Name = "InstitucionLabel";
+            this.InstitucionLabel.Size = new System.Drawing.Size(107, 13);
+            this.InstitucionLabel.TabIndex = 26;
+            this.InstitucionLabel.Text = "Institucion Financiera";
+            // 
+            // ReceptorLabel
+            // 
+            this.ReceptorLabel.AutoSize = true;
+            this.ReceptorLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ReceptorLabel.Location = new System.Drawing.Point(20, 168);
+            this.ReceptorLabel.Name = "ReceptorLabel";
+            this.ReceptorLabel.Size = new System.Drawing.Size(51, 13);
+            this.ReceptorLabel.TabIndex = 25;
+            this.ReceptorLabel.Text = "Receptor";
             // 
             // EmisorLabel
             // 
@@ -328,102 +426,15 @@
             this.InformationProvider.ContainerControl = this;
             this.InformationProvider.Icon = ((System.Drawing.Icon)(resources.GetObject("InformationProvider.Icon")));
             // 
-            // ReceptorLabel
+            // MostrarChequesButton
             // 
-            this.ReceptorLabel.AutoSize = true;
-            this.ReceptorLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ReceptorLabel.Location = new System.Drawing.Point(20, 168);
-            this.ReceptorLabel.Name = "ReceptorLabel";
-            this.ReceptorLabel.Size = new System.Drawing.Size(51, 13);
-            this.ReceptorLabel.TabIndex = 25;
-            this.ReceptorLabel.Text = "Receptor";
-            // 
-            // InstitucionLabel
-            // 
-            this.InstitucionLabel.AutoSize = true;
-            this.InstitucionLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.InstitucionLabel.Location = new System.Drawing.Point(18, 207);
-            this.InstitucionLabel.Name = "InstitucionLabel";
-            this.InstitucionLabel.Size = new System.Drawing.Size(107, 13);
-            this.InstitucionLabel.TabIndex = 26;
-            this.InstitucionLabel.Text = "Institucion Financiera";
-            // 
-            // MonedaLabel
-            // 
-            this.MonedaLabel.AutoSize = true;
-            this.MonedaLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.MonedaLabel.Location = new System.Drawing.Point(18, 263);
-            this.MonedaLabel.Name = "MonedaLabel";
-            this.MonedaLabel.Size = new System.Drawing.Size(46, 13);
-            this.MonedaLabel.TabIndex = 27;
-            this.MonedaLabel.Text = "Moneda";
-            // 
-            // FechaLabel
-            // 
-            this.FechaLabel.AutoSize = true;
-            this.FechaLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FechaLabel.Location = new System.Drawing.Point(18, 302);
-            this.FechaLabel.Name = "FechaLabel";
-            this.FechaLabel.Size = new System.Drawing.Size(37, 13);
-            this.FechaLabel.TabIndex = 29;
-            this.FechaLabel.Text = "Fecha";
-            // 
-            // EmisorColumn
-            // 
-            this.EmisorColumn.HeaderText = "Emisor";
-            this.EmisorColumn.Name = "EmisorColumn";
-            this.EmisorColumn.ReadOnly = true;
-            // 
-            // ReceptorColumn
-            // 
-            this.ReceptorColumn.HeaderText = "Receptor";
-            this.ReceptorColumn.Name = "ReceptorColumn";
-            this.ReceptorColumn.ReadOnly = true;
-            // 
-            // InstituciónColumn
-            // 
-            this.InstituciónColumn.HeaderText = "Institución Financiera";
-            this.InstituciónColumn.Name = "InstituciónColumn";
-            this.InstituciónColumn.ReadOnly = true;
-            // 
-            // MonedaColumn
-            // 
-            this.MonedaColumn.HeaderText = "Moneda";
-            this.MonedaColumn.Name = "MonedaColumn";
-            this.MonedaColumn.ReadOnly = true;
-            // 
-            // FechaColumn
-            // 
-            this.FechaColumn.HeaderText = "Fecha";
-            this.FechaColumn.Name = "FechaColumn";
-            this.FechaColumn.ReadOnly = true;
-            // 
-            // FechaDateTimePicker
-            // 
-            this.FechaDateTimePicker.Location = new System.Drawing.Point(21, 318);
-            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
-            this.FechaDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.FechaDateTimePicker.TabIndex = 7;
-            // 
-            // MonedaComboBox
-            // 
-            this.MonedaComboBox.FormattingEnabled = true;
-            this.MonedaComboBox.Items.AddRange(new object[] {
-            "Dolar",
-            "Euro",
-            "Colon",
-            "Peso"});
-            this.MonedaComboBox.Location = new System.Drawing.Point(21, 278);
-            this.MonedaComboBox.Name = "MonedaComboBox";
-            this.MonedaComboBox.Size = new System.Drawing.Size(200, 21);
-            this.MonedaComboBox.TabIndex = 6;
-            // 
-            // MontoNumericUpDown
-            // 
-            this.MontoNumericUpDown.Location = new System.Drawing.Point(21, 106);
-            this.MontoNumericUpDown.Name = "MontoNumericUpDown";
-            this.MontoNumericUpDown.Size = new System.Drawing.Size(205, 20);
-            this.MontoNumericUpDown.TabIndex = 2;
+            this.MostrarChequesButton.Location = new System.Drawing.Point(522, 493);
+            this.MostrarChequesButton.Name = "MostrarChequesButton";
+            this.MostrarChequesButton.Size = new System.Drawing.Size(211, 23);
+            this.MostrarChequesButton.TabIndex = 17;
+            this.MostrarChequesButton.Text = "Mostrar cheques...";
+            this.MostrarChequesButton.UseVisualStyleBackColor = true;
+            this.MostrarChequesButton.Click += new System.EventHandler(this.MostrarChequesButton_Click);
             // 
             // CreateFilesForm
             // 
@@ -431,6 +442,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1228, 535);
+            this.Controls.Add(this.MostrarChequesButton);
             this.Controls.Add(this.InformacionRutaLabel);
             this.Controls.Add(this.BorrarRenglonButton);
             this.Controls.Add(this.CerrarButton);
@@ -446,8 +458,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.UpsertPanel.ResumeLayout(false);
             this.UpsertPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.InformationProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MontoNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InformationProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -493,6 +505,7 @@
         private System.Windows.Forms.NumericUpDown MontoNumericUpDown;
         private System.Windows.Forms.ComboBox MonedaComboBox;
         private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
+        private System.Windows.Forms.Button MostrarChequesButton;
     }
 }
 

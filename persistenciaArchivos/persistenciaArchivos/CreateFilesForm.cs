@@ -223,9 +223,10 @@ namespace persistenciaArchivos
                     Descripcion = descripcionEncriptada,
                     Emisor = ChequesDataGridView.Rows[rowIndex].Cells[4].Value.ToString(),
                     Receptor = ChequesDataGridView.Rows[rowIndex].Cells[5].Value.ToString(),
-                    Fecha = Convert.ToDateTime(ChequesDataGridView.Rows[rowIndex].Cells[8].Value.ToString()),
+                    
                     Institucion = ChequesDataGridView.Rows[rowIndex].Cells[6].Value.ToString(),
                     Moneda = ChequesDataGridView.Rows[rowIndex].Cells[7].Value.ToString(),
+                    Fecha = Convert.ToDateTime(ChequesDataGridView.Rows[rowIndex].Cells[8].Value.ToString()),
                 });
             }
         }
@@ -256,6 +257,12 @@ namespace persistenciaArchivos
         private void DescripcionTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void MostrarChequesButton_Click(object sender, EventArgs e)
+        {
+            ChequesForm chequesForm = new ChequesForm();
+            chequesForm.ShowDialog();
         }
     }
 }
